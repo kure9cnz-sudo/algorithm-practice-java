@@ -1,0 +1,12 @@
+@echo off
+setlocal
+
+set APP_HOME=%~dp0
+set JAVA_EXE=java.exe
+
+if not "%JAVA_HOME%"=="" set JAVA_EXE=%JAVA_HOME%\bin\java.exe
+
+"%JAVA_EXE%" -classpath "%APP_HOME%gradle\wrapper\gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain %*
+set EXIT_CODE=%ERRORLEVEL%
+endlocal
+exit /b %EXIT_CODE%
